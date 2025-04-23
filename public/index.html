@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ödeme Başarılı</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .emoji { font-size: 48px; }
+    .title { font-size: 24px; margin-top: 12px; color: #27ae60; }
+    .desc { color: #555; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="emoji">✅</div>
+    <div class="title">Ödeme Başarılı!</div>
+    <div class="desc">Premium üyeliğiniz aktifleştiriliyor...</div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const uid = urlParams.get("uid");
+    const plan = urlParams.get("plan");
+
+    setTimeout(() => {
+      window.location.href = "https://mydietapp.com/payment-success?success=true&uid=" + uid + "&plan=" + plan;
+    }, 3000);
+  </script>
+</body>
+</html>
