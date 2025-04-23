@@ -35,5 +35,16 @@
     <div class="emoji">✅</div>
     <div class="text">Premium üyeliğiniz başarıyla aktif edildi!</div>
   </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const uid = urlParams.get("uid");
+    const plan = urlParams.get("plan");
+
+    // 3 saniye sonra gerçek işlemi tetikleyecek sayfaya yönlendirme
+    setTimeout(() => {
+      window.location.href = "/redirected.html?success=true&uid=" + uid + "&plan=" + plan;
+    }, 3000);
+  </script>
 </body>
 </html>
